@@ -1,15 +1,18 @@
 import React from "react";
-import './SignUpPage.css';
-import Banner from '../../Components/FrontPageComponent/Banner';
+import Banner from "../../Components/FrontPageComponent/Banner";
 import SignUpForm from "../../Components/FrontPageComponent/Sign-up";
+import "./SignUpPage.css";
 
 const SignUpPage = () => {
   return (
     <div className="container">
       <Banner />
+      <div class="green-bg">
+        <button type="button">Sign Up</button>
+      </div>
       <SignUpForm />
     </div>
-  )
-}
+  );
+};
 
 export default SignUpPage;
