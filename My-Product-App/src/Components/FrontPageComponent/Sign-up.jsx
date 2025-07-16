@@ -19,14 +19,14 @@ const SignUpForm = () => {
       <SocialMediaIcons />
       <p>or use your email for registration</p>
       <input
-        {...register("Name", { required: "Name is required" })}
+        {...register("name", { required: "Name is required" })}
         placeholder="Name"
         type="text"
       />
-      {errors.Username && <p>{errors.Username.message}</p>}
+      {errors.name && <p>{errors.name.message}</p>}
       <input
         {...register("email", { required: "Email is required" })}
-        placeholder="Name"
+        placeholder="Email"
         type="email"
       />
       {errors.email && <p>{errors.email.message}</p>}
