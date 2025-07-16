@@ -1,0 +1,12 @@
+.container {
+  width: 790px;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 29px;
+  background-color: #eee;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  padding-top: 25px;
+}
