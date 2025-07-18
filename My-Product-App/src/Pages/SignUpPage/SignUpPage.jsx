@@ -7,7 +7,7 @@ const SignUpPage = () => {
   return (
     <div className="container">
       <Banner />
-      <div class="green-bg">
+      <div className="green-bg">
         <button type="button">Sign Up</button>
       </div>
       <SignUpForm />

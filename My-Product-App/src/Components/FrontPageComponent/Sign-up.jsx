@@ -1,42 +1,65 @@
-import React from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import SocialMediaIcons from "./SocialMedia";
+import Input from "../helpingcomponent/Input";
+import "./Common.css";
 
 const SignUpForm = () => {
+  const [isSignup, setIsSignUp] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
     console.log("data:", data);
+    if (isSignup) {
+      console.log("user Signed Up:", data);
+    } else {
+      console.log("user Signed In:", data);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <h1>Create an Account</h1>
+    <form className="signup-form" onSubmit={handleSubmit(onSubmit)}>
+      <h1>{isSignup ? "Create an Account" : "Sign In"}</h1>
       <SocialMediaIcons />
-      <p>or use your email for registration</p>
-      <input
-        {...register("name", { required: "Name is required" })}
-        placeholder="Name"
-        type="text"
-      />
-      {errors.name && <p>{errors.name.message}</p>}
-      <input
-        {...register("email", { required: "Email is required" })}
-        placeholder="Email"
-        type="email"
-      />
-      {errors.email && <p>{errors.email.message}</p>}
-      <input
-        {...register("password", { required: "password is required" })}
-        placeholder="Password"
-        type="password"
-      />
-      {errors.password && <p>{errors.password.message}</p>}
-      <button type="submit">Sign-up</button>
+      <p className="sign-up-options">or use your email{isSignup ? " for registration" : " Sign In"} </p>
+      {isSignup && (
+        <Input
+          name="name"
+          type="text"
+          placeholder="Name"
+          register={register}
+          rules={{ required: "Name is required" }}
+          error={errors.name}
+        />
+      )}
+      <Input
+          name="email"
+          type="email"
+          placeholder="Email"
+          register={register}
+          rules={{ required: "Email is required" }}
+          error={errors.email}
+        />
+      <Input
+          name="password"
+          type="password"
+          placeholder="Password"
+          register={register}
+          rules={{ required: "password is required" }}
+          error={errors.password}
+        />
+      <button type="submit">{isSignup ? "Sign-up" : "Sign In"}</button>
+      <p className="toggle-signup" onClick={() => setIsSignUp(!isSignup)}>
+        {isSignup
+          ? "Already have an account? Sign In"
+          : "Don't have an account? Sign Up"}
+      </p>
     </form>
   );
 };

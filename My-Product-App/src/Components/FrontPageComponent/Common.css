@@ -1,3 +1,56 @@
 .banner {
   transition: left 0.8s;
 }
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 34%;
+}
+
+.signup-form h1 {
+  font-size: 32px;
+  color: #3aaf9f;
+}
+
+.sign-up-options {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.signup-form button {
+  width: 8rem;
+  height: 3rem;
+  background-color: #3aaf9f;
+  border: none;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.toggle-signup {
+  cursor: pointer;
+  color: blue;
+}
+
+.social-media {
+  display: flex;
+  gap: 20px;
+}
+
+.social-media a {
+  width: 3rem;
+  height: 3rem;
+  border: 0.1rem solid #777;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #555;
+}
